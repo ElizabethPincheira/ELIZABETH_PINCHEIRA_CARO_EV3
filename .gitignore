@@ -1,0 +1,44 @@
+# Entorno virtual
+venv/
+.venv/
+
+# Archivos de entorno y configuración sensible
+.env
+*.env
+*.env.*
+
+# Archivos de compilación de Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Bases de datos y otros archivos generados
+*.sqlite3
+*.db
+*.log
+
+# Archivos de configuraciones de Flask (si los tienes separados)
+instance/
+config.py
+
+# Archivos de caché y almacenamiento
+*.log
+*.pot
+*.pyc
+
+# Archivos de desarrollo de IDEs
+.vscode/
+.idea/
+
+# Archivos de pruebas
+.pytest_cache/
+.tox/
+.coverage
+coverage.xml
+htmlcov/
+
+# Otros archivos temporales
+*.tmp
+*.swp
+.DS_Store
