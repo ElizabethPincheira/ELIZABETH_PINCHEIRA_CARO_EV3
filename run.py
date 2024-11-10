@@ -34,9 +34,37 @@ def ejercicio1():
     return render_template('ejercicio1.html', notaFinal=resultado, aprobado=aprobado)
 
 
-@app.route('/ejercicio2')
+@app.route('/ejercicio2', methods=['GET', 'POST'])
 def ejercicio2():
-    return render_template('ejercicio2.html')
+    mayor = None
+    nombre_mayor = None
+
+    if request.method == 'POST':
+        nombreuno = request.form['nombreuno']
+        nombredos = request.form['nombredos']
+        nombretres = request.form['nombretres']
+
+        # Inicializar el nombre y la longitud más larga con el primer nombre
+        nombre_mayor = nombreuno
+        mayor = len(nombreuno)
+
+        # Comparar con el segundo nombre
+        if len(nombredos) > mayor:
+            nombre_mayor = nombredos
+            mayor = len(nombredos)
+
+        # Comparar con el tercer nombre
+        if len(nombretres) > mayor:
+            nombre_mayor = nombretres
+            mayor = len(nombretres)
+
+        print(f"Nombre mayor: {nombre_mayor} con longitud: {mayor}")
+
+    return render_template('ejercicio2.html', mayor=mayor, nombre_mayor=nombre_mayor)
+
+
+
+
 
 
 

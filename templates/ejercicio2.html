@@ -1,10 +1,27 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <title>wololo</title>
+    <meta charset="UTF-8">
+    <title>Ejercicio2</title>
+    <link rel="stylesheet" href="/static/css/ejercicio1.css">
 </head>
 <body>
-    <h1>ejercicio dos</h1>
-    <p>ejercicio 2</p>
+<form method="POST">
+    <label for="nombreuno">Nombre 1:</label><br>
+    <input type="text" name="nombreuno" required><br>
+
+    <label for="nombredos">Nombre 2:</label><br>
+    <input type="text" name="nombredos" required><br>
+
+    <label for="nombretres">Nombre 3:</label><br>
+    <input type="text" name="nombretres" required><br>
+
+    <input type="submit" value="Enviar">
+</form>
+
+{% if mayor is not none %}
+    <h2>El nombre más largo es: {{ nombre_mayor }} con {{ mayor }} caracteres</h2>
+{% endif %}
+
 </body>
 </html>
