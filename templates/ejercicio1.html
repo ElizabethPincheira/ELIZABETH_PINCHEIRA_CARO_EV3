@@ -1,10 +1,35 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <title>wololo</title>
+    <meta charset="UTF-8">
+    <title>Ejercicio1</title>
+    <link rel="stylesheet" href="/static/css/ejercicio1.css">
 </head>
 <body>
-    <h1>ejercicio uno</h1>
-    <p>ejercicio 1</p>
+<h1>Formulario de notas</h1>
+<form method="POST">
+    <label for="notauno">Nota 1:</label><br>
+    <input type="number" value="0" name="notauno" required><br>
+
+    <label for="notados">Nota 2:</label><br>
+    <input type="number" value="0" name="notados" required><br>
+
+    <label for="notatres">Nota 3:</label><br>
+    <input type="number" value="0" name="notatres" required><br>
+
+    <label for="asistencia">Asistencia (%):</label><br>
+    <input type="number" value="0" name="asistencia" required><br>
+
+    <input type="submit" value="Enviar">
+</form>
+
+{% if notaFinal is not none %}
+    <h2>Resultado final: {{ notaFinal }}</h2>
+    {% if aprobado %}
+        <p>Estado: Aprobado</p>
+    {% else %}
+        <p>Estado: Reprobado</p>
+    {% endif %}
+{% endif %}
 </body>
 </html>
